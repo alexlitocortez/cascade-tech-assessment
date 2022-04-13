@@ -24,7 +24,7 @@
         <p>Merchant ID: {{ statement.Transactions[0].MerchantId }}</p>
       </div>
       <div class="card">
-        <h1>Transaction Not Settled</h1>
+        <h1>Unsettled Transaction #1</h1>
         <p>Account Number: {{ statement.NotSettled[0].AccountNumber }}</p>
         <p>Transaction Type: {{ statement.NotSettled[0].TransactionTypeId }}</p>
         <p>Transaction Date: {{ statement.NotSettled[0].TransactionDate }}</p>
@@ -49,7 +49,7 @@
     </div>
     <div class="flex-two" v-for="statement in statements" :key="statement">
       <div class="card">
-        <h1>Transaction Not Settled</h1>
+        <h1>Unsettled Transaction #2</h1>
         <p>Account Number: {{ statement.NotSettled[1].AccountNumber }}</p>
         <p>Transaction Type: {{ statement.NotSettled[1].TransactionTypeId }}</p>
         <p>Transaction Date: {{ statement.NotSettled[1].TransactionDate }}</p>
@@ -114,9 +114,19 @@ h1 {
 }
 
 .card {
-  width: 30rem;
+  width: 25rem;
   height: 25rem;
   box-shadow: 2px 1px 1px 1px black;
   text-align: left;
+}
+
+@media (max-width: 1250px) {
+  .flex-one,
+  .flex-two {
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+  }
 }
 </style>
